@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	public static float pontuacaoRecord = 0;
 	public static float pontuacaoTop = 0;
 
+    bool pause;
 
     // Use this for initialization
     void Start()
@@ -147,7 +148,24 @@ public class Player : MonoBehaviour
 
     void Update()
 	{
-		if (pontosText) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!pause)
+            {
+                //Time.timeScale = 0;
+                pause = true;
+                Debug.Log("PAUSA JOGO");
+            }
+
+            if (pause)
+            {
+                //Time.timeScale = 1;
+                pause = false;
+                Debug.Log("PAUSA JOGO");
+            }
+        }
+
+        if (pontosText) {
 			pontosText.text = "SCORE: " + pontuacaoGame.ToString ();
 		} else {
 			arcadeText.text = "SCORE: " + pontuacaoArcade.ToString ();
