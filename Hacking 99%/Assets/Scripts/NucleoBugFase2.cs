@@ -36,10 +36,9 @@ public class NucleoBugFase2 : MonoBehaviour {
 		if (sc.getVida() <= 0)
 		{
 			Instantiate(explosao, transform.position, Quaternion.identity);
-			
-			// Criando o som da explosão.
-			SoundEffectScript.Instance.MakeExplosionSound();
-			Destroy(gameObject);
+
+            // Criando o som da explosão.
+            Destroy(gameObject);
 			select_fase.unlockFase3 = true;
 		}
 	}

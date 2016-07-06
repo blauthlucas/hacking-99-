@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 	public static float pontuacaoRecord = 0;
 	public static float pontuacaoTop = 0;
 
-    bool pause;
+    bool pause = false;
 
     // Use this for initialization
     void Start()
@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
 			timerPower = 15f;
 			anim.SetBool("perdeupower", false);
             //anim.SetBool("powerup2", true);
-			Debug.Log("TEEEEETAAAAAA");
             anim.SetBool("powerup3", false);
         }
         if (colisor.gameObject.tag == "powerSpeed")
@@ -148,23 +147,6 @@ public class Player : MonoBehaviour
 
     void Update()
 	{
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!pause)
-            {
-                //Time.timeScale = 0;
-                pause = true;
-                Debug.Log("PAUSA JOGO");
-            }
-
-            if (pause)
-            {
-                //Time.timeScale = 1;
-                pause = false;
-                Debug.Log("PAUSA JOGO");
-            }
-        }
-
         if (pontosText) {
 			pontosText.text = "SCORE: " + pontuacaoGame.ToString ();
 		} else {
@@ -172,7 +154,6 @@ public class Player : MonoBehaviour
 		}
 
         timerPower -= Time.deltaTime;
-        Debug.Log(timerPower);
         if (timerPower < 0)
         {
             maxSpeed = 5f;
@@ -185,7 +166,6 @@ public class Player : MonoBehaviour
         {
             Invoke("InstanciaExplosao", 1);
             // Criando o som da explosão.
-            SoundEffectScript.Instance.MakeExplosionSound();
             Destroy(gameObject);
         }        
     }

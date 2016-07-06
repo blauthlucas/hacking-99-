@@ -53,8 +53,6 @@ public class spawnFase1 : MonoBehaviour
 
         for (int i = 0; i < coreContagem; i++)
         {
-
-            Debug.Log(contadorCore);
             if (contadorCore == 1)
             {
                 contadorCore = Random.Range(2, 3);
@@ -71,7 +69,6 @@ public class spawnFase1 : MonoBehaviour
             for (int i = 0; i < inimContagem; i++)
             {
                 int randomEnemy = Random.Range(1, 5);
-                Debug.Log(randomEnemy);
                 Quaternion spawnRotation = Quaternion.identity;
                 if (randomEnemy == 1)
                 {
@@ -95,21 +92,18 @@ public class spawnFase1 : MonoBehaviour
     }
     public void InstanciaPowerUpDefesa()
     {
-        Debug.Log("teta");
         Instantiate(powerUpDefesa, spawnPowerUpDefesa, Quaternion.identity);
 		CancelInvoke ();
     }
 
     public void InstanciaPowerUpVida()
     {
-        Debug.Log("teta3");
         Instantiate(powerUpVida, spawnPowerUpVida, Quaternion.identity);
 		CancelInvoke ();
     }
     
     public void InstanciaPowerUpSpeed()
     {
-        Debug.Log("teta2");
         Instantiate(powerUpSpeed, spawnPowerUpSpeed, Quaternion.identity);
 		CancelInvoke ();
     }
