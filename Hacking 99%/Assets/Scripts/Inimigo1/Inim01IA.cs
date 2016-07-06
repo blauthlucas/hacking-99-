@@ -36,7 +36,6 @@ public class Inim01IA : MonoBehaviour
             Invoke("InstanciaExplosao", 1);
 
             // Criando o som da explosão.
-            SoundEffectScript.Instance.MakeExplosionSound();
             Destroy(gameObject);
 			Player.pontuacaoGame=Player.pontuacaoGame + 10;
         }

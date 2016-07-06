@@ -36,7 +36,6 @@ public class inim00 : MonoBehaviour
 
 
             // Criando o som da explosão.
-            SoundEffectScript.Instance.MakeExplosionSound();
             Destroy(gameObject);
         }
     }

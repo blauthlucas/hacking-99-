@@ -44,7 +44,6 @@ public class EnemyShot : MonoBehaviour {
 			shootCooldown = shootIntRate;
 			var shotTransform = Instantiate(enemyBullet) as Transform;
 			shotTransform.position = firePoint.position;
-			SoundEffectScript.Instance.MakeEnemyShotSound();
 		}
     }
 }

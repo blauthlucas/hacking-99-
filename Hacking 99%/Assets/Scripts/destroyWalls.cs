@@ -15,8 +15,6 @@ public class destroyWalls : MonoBehaviour {
 	    if(getVida() <= 0)
         {
             Instantiate(explosao, transform.position, Quaternion.identity);
-
-            SoundEffectScript.Instance.MakeExplosionSound();
             Destroy(gameObject);
         }
 	}

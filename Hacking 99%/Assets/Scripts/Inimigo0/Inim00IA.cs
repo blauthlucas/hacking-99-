@@ -44,7 +44,6 @@ public class Inim00IA : MonoBehaviour
             Instantiate(explosao, transform.position, Quaternion.identity);
 
             // Criando o som da explosão.
-            SoundEffectScript.Instance.MakeExplosionSound();
             Destroy(gameObject);
 			Player.pontuacaoArcade=Player.pontuacaoArcade + 125;
         }

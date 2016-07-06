@@ -5,8 +5,6 @@ public class SoundEffectScript : MonoBehaviour {
 
 	public static SoundEffectScript Instance;
 
-	public AudioClip explosionSound;
-	public AudioClip enemyShotSound;
 	public AudioClip ColetaSound;
 
 	void Awake()
@@ -17,16 +15,6 @@ public class SoundEffectScript : MonoBehaviour {
 		}
 
 		Instance = this;
-	}
-
-	public void MakeExplosionSound()
-	{
-		MakeSound (explosionSound);
-	}
-
-	public void MakeEnemyShotSound()
-	{
-		MakeSound (enemyShotSound);
 	}
 	public void MakeColetaSound()
 	{
